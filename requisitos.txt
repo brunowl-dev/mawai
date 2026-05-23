@@ -1,6 +1,6 @@
 requisitos funcionais:
-	1) registrar filmes, series, jogos ou álbuns de musica - bruno
-	2) ideias de date - bruno
+	1) registrar filmes, series, jogos ou álbuns de musica - FEITO
+	2) ideias de date - FAZENDO
 	3) banco de dados - bruno (modelar)
 	4) subir pelo GitHub ou pelo Render
 	5) tasklist individual (duas telas diferentes) - bruno
@@ -14,7 +14,7 @@ requisitos nao-funcionais:
 	11) pasta com ícones das coisas
 	12) sistema de progressão da serie
 	13) contagem de dias (03/12/2025, 02/09/2004 e 29/04/2005, 20/06/2026)
-	14) local do date - bruno
-	15) data do date - bruno
+	14) local do date - bruno - FAZENDO
+	15) data do date - bruno - FAZENDO
 	16) registrar favoritos de cada um - bruno
 	17) placar de jogos - bruno

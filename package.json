@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "description": "Tracklist app for movies, games, music and series.",
   "main": "backend/server.js",
+  "homepage": "https://brunowl-dev.github.io/mawai/",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "NODE_ENV=development node backend/server.js"
+    "dev": "NODE_ENV=development node backend/server.js",
+    "build": "echo 'Static site, no build needed'",
+    "deploy": "gh-pages -d frontend"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^4.18.4",
     "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

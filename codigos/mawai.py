@@ -36,12 +36,45 @@ def addJogos():
 def addAlbuns():
     try:
         nome = input('Digite o nome do álbum de música: ')
-        genero = input('Digite o gênero do álbum de música: ')
         artista = input('Digite o nome do artista do álbum de música: ')
+        genero = input('Digite o gênero do álbum de música: ')
         midias.append(Albuns(nome, 'Álbum de música', genero, artista))
         return True
     except:
         return False
+
+def addMidia():
+    tipo_midia = int(input('1-Filme\n2-Série\n3-Jogo\n4-Álbum de música\n'))
+    if (tipo_midia == 1):
+        if (addFilmes()):
+            print('Mídia cadastrada com sucesso!')
+        else:
+            print('Erro ao cadastrar mídia!')
+    elif (tipo_midia == 2):
+        if (addSeries()):
+            print('Mídia cadastrada com sucesso!')
+        else:
+            print('Erro ao cadastrar mídia!')
+    elif (tipo_midia == 3):
+        if (addJogos()):
+            print('Mídia cadastrada com sucesso!')
+        else:
+            print('Erro ao cadastrar mídia!')
+    elif (tipo_midia == 4):
+        if (addAlbuns()):
+            print('Mídia cadastrada com sucesso!')
+        else:
+            print('Erro ao cadastrar mídia!')
+    else:
+        print('Opção inválida!')
+
+def mostraMidias():
+    if (len(midias) == 0):
+        print('Nenhuma mídia cadastrada!')
+    else:
+        os.system('cls')
+        for midia in midias:
+            print(midia)
 
 while True:
     os.system('cls')
@@ -52,36 +85,12 @@ while True:
 
     elif (opcao == 1):
         os.system('cls')
-        tipo_midia = int(input('1-Filme\n2-Série\n3-Jogo\n4-Álbum de música\n'))
-        if (tipo_midia == 1):
-            if (addFilmes()):
-                print('Mídia cadastrada com sucesso!')
-            else:
-                print('Erro ao cadastrar mídia!')
-        elif (tipo_midia == 2):
-            if (addSeries()):
-                print('Mídia cadastrada com sucesso!')
-            else:
-                print('Erro ao cadastrar mídia!')
-        elif (tipo_midia == 3):
-            if (addJogos()):
-                print('Mídia cadastrada com sucesso!')
-            else:
-                print('Erro ao cadastrar mídia!')
-        elif (tipo_midia == 4):
-            if (addAlbuns()):
-                print('Mídia cadastrada com sucesso!')
-            else:
-                print('Erro ao cadastrar mídia!')
-        else:
-            print('Opção inválida!')
+        addMidia()
 
     elif (opcao == 2):
-        if (len(midias) == 0):
-            print('Nenhuma mídia cadastrada!')
-        else:
-            for midia in midias:
-                print(midia)
+        mostraMidias()
+    
+    os.system('pause')
     
 print('Programa encerrado!')
 os.system('pause')

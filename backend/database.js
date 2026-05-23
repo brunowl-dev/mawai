@@ -22,6 +22,51 @@ const initialize = () => {
         created_at TEXT DEFAULT CURRENT_TIMESTAMP
       )
     `);
+
+    db.run(`
+      CREATE TABLE IF NOT EXISTS tb_albuns (
+        id_album INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome VARCHAR(100) NOT NULL,
+        genero VARCHAR(100) NOT NULL,
+        artista VARCHAR(100) NOT NULL
+      )
+    `);
+
+    db.run(`
+      CREATE TABLE IF NOT EXISTS tb_jogos (
+        id_jogo INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome VARCHAR(100) NOT NULL,
+        genero VARCHAR(100) NOT NULL,
+        plataforma VARCHAR(100) NOT NULL
+      )
+    `);
+
+    db.run(`
+      CREATE TABLE IF NOT EXISTS tb_series (
+        id_serie INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome VARCHAR(100) NOT NULL,
+        genero VARCHAR(100) NOT NULL,
+        episodios INTEGER NOT NULL
+      )
+    `);
+
+    db.run(`
+      CREATE TABLE IF NOT EXISTS tb_filmes (
+        id_filme INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome VARCHAR(100) NOT NULL,
+        genero VARCHAR(100) NOT NULL,
+        duracao INTEGER NOT NULL
+      )
+    `);
+
+    db.run(`
+      CREATE TABLE IF NOT EXISTS tb_dates (
+        id_date INTEGER PRIMARY KEY AUTOINCREMENT,
+        nome VARCHAR(100) NOT NULL,
+        cidade VARCHAR(100) NOT NULL,
+        estado VARCHAR(100) NOT NULL
+      )
+    `);
   });
 };
 

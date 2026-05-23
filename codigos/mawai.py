@@ -1,7 +1,9 @@
 from midias import Filmes, Series, Jogos, Albuns, Midia
+from dates import Dates
 import os
 
 midias = list()
+dates = list()
 
 def addFilmes():
     try:
@@ -76,11 +78,30 @@ def mostraMidias():
         for midia in midias:
             print(midia)
 
+def addDate():
+    try:
+        nome = input('Digite o nome do evento: ')
+        cidade = input('Digite a cidade do evento: ')
+        estado = input('Digite o estado do evento: ')
+        data = input('Digite a data do evento (dd/mm/aaaa): ')
+        dates.append(Dates(nome, cidade, estado, data))
+        return True
+    except:
+        return False
+
+def mostraDates():
+    if (len(dates) == 0):
+        print('Nenhum date cadastrado!')
+    else:
+        os.system('cls')
+        for date in dates:
+            print(date)
+
 while True:
     os.system('cls')
-    opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Sair\n'))
+    opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Cadastrar date\n4 - Mostrar dates\n5 - Sair\n'))
 
-    if (opcao == 3):
+    if (opcao == 5):
         break
 
     elif (opcao == 1):
@@ -90,6 +111,13 @@ while True:
     elif (opcao == 2):
         mostraMidias()
     
+    elif (opcao == 3):
+        os.system('cls')
+        addDate()
+    
+    elif (opcao == 4):
+        mostraDates()
+
     os.system('pause')
     
 print('Programa encerrado!')

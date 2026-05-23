@@ -1,0 +1,20 @@
+requisitos funcionais:
+	registrar filmes, series, jogos ou álbuns de musica - bruno
+	ideias de date - bruno
+	banco de dados - bruno (modelar)
+	subir pelo GitHub ou pelo Render
+	tasklist individual (duas telas diferentes) - bruno
+	sistema de login (com APENAS login, sem cadastro) - bruno
+	construir com nodejs, sqlite e html, css e js pro frontend
+	
+requisitos nao-funcionais:
+	paleta de cor seguir azul, preto e branco
+	registrar gênero (do filme, a serie, do jogo, musica) - bruno
+	registrar quem deu a ideia  - bruno
+	pasta com ícones das coisas
+	sistema de progressão da serie
+	contagem de dias (03/12/2025, 02/09/2004 e 29/04/2005, 20/06/2026)
+	local do date - bruno
+	data do date - bruno
+	registrar favoritos de cada um - bruno
+	placar de jogos - bruno

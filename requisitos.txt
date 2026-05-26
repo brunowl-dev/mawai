@@ -5,7 +5,8 @@ requisitos funcionais:
 	4) subir pelo GitHub ou pelo Render
 	5) tasklist individual (duas telas diferentes) - bruno
 	6) sistema de login (com APENAS login, sem cadastro) - bruno
-	7) construir com nodejs, sqlite e html, css e js pro frontend
+	7) construir com nodejs, sqlite e html, css e js pro frontend - FEITO
+	18) construir estrutura das pastas - FEITO
 	
 requisitos nao-funcionais:
 	8) paleta de cor seguir azul, preto e branco
@@ -18,3 +19,4 @@ requisitos nao-funcionais:
 	15) data do date - bruno - FEITO
 	16) registrar favoritos de cada um - bruno
 	17) placar de jogos - bruno
+	19) gravar em .csv

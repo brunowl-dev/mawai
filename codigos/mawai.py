@@ -1,5 +1,5 @@
-from midias import Filmes, Series, Jogos, Albuns, Midia
-from dates import Dates
+from codigos.classes.midias import Filmes, Series, Jogos, Albuns, Midia
+from codigos.classes.dates import Dates
 import os
 
 midias = list()

@@ -104,8 +104,9 @@ def addTarefa():
         nome = input('Digite o nome da tarefa: ')
         descricao = input('Digite a descrição da tarefa: ')
         data = input('Digite a data de vencimento da tarefa (dd/mm/aaaa): ')
+        dono = input('Quem é o dono da tarefa?\n1-Luiza\n2\Bruno\n')
         print('Tarefa cadastrada com sucesso!')
-        return Tarefas(nome, descricao, data)
+        return Tarefas(nome, descricao, data, dono)
     except:
         print('Erro ao cadastrar tarefa!')
         return False
@@ -124,13 +125,13 @@ def pesquisaTarefas(tarefas):
 while True:
     os.system('cls')
     try:
-        opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Cadastrar date\n4 - Mostrar dates\n5 - Cadastrar tarefa\n6 - Mudar status da tarefas\n7 - Mostrar tarefas\n8 - Sair\n'))
+        opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Cadastrar date\n4 - Mostrar dates\n5 - Cadastrar tarefa\n6 - Mudar status da tarefas\n7 - Mostrar tarefas\n99 - Sair\n'))
     except ValueError:
         print('Valor inválido!')
         os.system('pause')
         continue
 
-    if (opcao == 8):
+    if (opcao == 99):
         break
 
     elif (opcao == 1):

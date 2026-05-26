@@ -1,8 +1,9 @@
 class Tarefas:
-    def __init__(self, nome, descricao, data):
+    def __init__(self, nome, descricao, data, dono):
         self.nome = nome
         self.descricao = descricao
         self.data = data
+        self.dono = dono
         self.status = 'Pendente'
 
     def __str__(self):

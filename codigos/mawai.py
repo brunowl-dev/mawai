@@ -1,9 +1,11 @@
-from codigos.classes.midias import Filmes, Series, Jogos, Albuns, Midia
-from codigos.classes.dates import Dates
+from classes.midias import Filmes, Series, Jogos, Albuns, Midia
+from classes.dates import Dates
+from classes.tarefas import Tarefas
 import os
 
 midias = list()
 dates = list()
+tarefas = list()
 
 def addFilmes():
     try:
@@ -97,11 +99,38 @@ def mostraDates():
         for date in dates:
             print(date)
 
+def addTarefa():
+    try:
+        nome = input('Digite o nome da tarefa: ')
+        descricao = input('Digite a descrição da tarefa: ')
+        data = input('Digite a data de vencimento da tarefa (dd/mm/aaaa): ')
+        print('Tarefa cadastrada com sucesso!')
+        return Tarefas(nome, descricao, data)
+    except:
+        print('Erro ao cadastrar tarefa!')
+        return False
+
+def pesquisaTarefas(tarefas):
+    try:
+        nome = input('Digite o nome da tarefa que deseja pesquisar: ')
+        for i, tarefa in enumerate(tarefas):
+            if (tarefa.getNome() == nome):
+                return i
+            
+        print('Tarefa não encontrada!')
+    except:
+        print('Erro ao pesquisar tarefa!')
+
 while True:
     os.system('cls')
-    opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Cadastrar date\n4 - Mostrar dates\n5 - Sair\n'))
+    try:
+        opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Cadastrar date\n4 - Mostrar dates\n5 - Cadastrar tarefa\n6 - Mudar status da tarefas\n7 - Mostrar tarefas\n8 - Sair\n'))
+    except ValueError:
+        print('Valor inválido!')
+        os.system('pause')
+        continue
 
-    if (opcao == 5):
+    if (opcao == 8):
         break
 
     elif (opcao == 1):
@@ -117,6 +146,19 @@ while True:
     
     elif (opcao == 4):
         mostraDates()
+
+    elif (opcao == 5):
+        tarefa = addTarefa()
+        if tarefa:
+            tarefas.append(tarefa)
+
+    elif (opcao == 6):
+        indice = pesquisaTarefas(tarefas)
+        if indice is not None:
+            print(indice)
+
+    else:
+        print('Opção inválida!')
 
     os.system('pause')
     

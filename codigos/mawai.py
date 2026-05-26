@@ -104,9 +104,11 @@ def addTarefa():
         nome = input('Digite o nome da tarefa: ')
         descricao = input('Digite a descrição da tarefa: ')
         data = input('Digite a data de vencimento da tarefa (dd/mm/aaaa): ')
-        dono = input('Quem é o dono da tarefa?\n1-Luiza\n2\Bruno\n')
+        dono = input('Quem é o dono da tarefa?\n1 - Luiza\n2 - Bruno\n')
         print('Tarefa cadastrada com sucesso!')
-        return Tarefas(nome, descricao, data, dono)
+        tarefa = Tarefas(nome, descricao, data, dono)
+        tarefas.append(tarefa)
+        return True
     except:
         print('Erro ao cadastrar tarefa!')
         return False
@@ -116,6 +118,7 @@ def pesquisaTarefas(tarefas):
         nome = input('Digite o nome da tarefa que deseja pesquisar: ')
         for i, tarefa in enumerate(tarefas):
             if (tarefa.getNome() == nome):
+                print(tarefa[i])
                 return i
             
         print('Tarefa não encontrada!')
@@ -149,14 +152,11 @@ while True:
         mostraDates()
 
     elif (opcao == 5):
-        tarefa = addTarefa()
-        if tarefa:
-            tarefas.append(tarefa)
+        os.system('cls')
+        addTarefa()
 
     elif (opcao == 6):
         indice = pesquisaTarefas(tarefas)
-        if indice is not None:
-            print(indice)
 
     else:
         print('Opção inválida!')

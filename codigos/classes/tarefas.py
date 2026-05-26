@@ -7,7 +7,7 @@ class Tarefas:
         self.status = 'Pendente'
 
     def __str__(self):
-        return f'{self.nome} - {self.descricao} - {self.data}'
+        return f'{self.dono}) {self.nome} - {self.descricao} - {self.data}'
     
     def setNome(self, nome):
         self.nome = nome

@@ -2,10 +2,11 @@ requisitos funcionais:
 	1) registrar filmes, series, jogos ou álbuns de musica - FEITO
 	2) ideias de date - FEITO
 	3) banco de dados - bruno (modelar)
+	20) banco de dados em .csv - bruno
 	4) subir pelo GitHub ou pelo Render
-	5) tasklist individual (duas telas diferentes) - bruno
+	5) tasklist individual (duas telas diferentes) - bruno FAZENDO
 	6) sistema de login (com APENAS login, sem cadastro) - bruno
-	7) construir com nodejs, sqlite e html, css e js pro frontend - FEITO
+	7) construir com nodejs, sqlite e html, css e js pro frontend
 	18) construir estrutura das pastas - FEITO
 	
 requisitos nao-funcionais:

@@ -1,9 +1,11 @@
-from codigos.classes.midias import Filmes, Series, Jogos, Albuns, Midia
-from codigos.classes.dates import Dates
+from classes.midias import Filmes, Series, Jogos, Albuns, Midia
+from classes.dates import Dates
+from classes.tarefas import Tarefas
 import os
 
 midias = list()
 dates = list()
+tarefas = list()
 
 def addFilmes():
     try:
@@ -97,11 +99,54 @@ def mostraDates():
         for date in dates:
             print(date)
 
+def addTarefa():
+    try:
+        nome = input('Digite o nome da tarefa: ')
+        descricao = input('Digite a descrição da tarefa: ')
+        data = input('Digite a data de vencimento da tarefa (dd/mm/aaaa): ')
+        dono = int(input('Quem é o dono da tarefa?\n1 - Luiza\n2 - Bruno\n'))
+        if (dono == 1):
+            dono = 'Luiza'
+        elif (dono == 2):
+            dono = 'Bruno'
+        else:
+            print('Opção inválida!')
+            return False
+        print('Tarefa cadastrada com sucesso!')
+        tarefa = Tarefas(nome, descricao, data, dono)
+        tarefas.append(tarefa)
+        return True
+    except:
+        print('Erro ao cadastrar tarefa!')
+        return False
+
+def pesquisaTarefas(tarefas):
+    try:
+        nome = input('Digite o nome da tarefa que deseja pesquisar: ')
+        for i, tarefa in enumerate(tarefas):
+            if (tarefa.getNome() == nome):
+                return i
+            
+        print('Tarefa não encontrada!')
+        return False
+    except:
+        print('Erro ao pesquisar tarefa!')
+        return False
+
+def mostraTarefas(tarefas):
+    for tarefa in tarefas:
+        print(tarefa)
+
 while True:
     os.system('cls')
-    opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Cadastrar date\n4 - Mostrar dates\n5 - Sair\n'))
+    try:
+        opcao = int(input('MAWAI\n1 - Cadastrar mídia\n2 - Mostrar mídias\n3 - Cadastrar date\n4 - Mostrar dates\n5 - Cadastrar tarefa\n6 - Mudar status da tarefas\n7 - Mostrar tarefas\n99 - Sair\n'))
+    except ValueError:
+        print('Valor inválido!')
+        os.system('pause')
+        continue
 
-    if (opcao == 5):
+    if (opcao == 99):
         break
 
     elif (opcao == 1):
@@ -117,6 +162,21 @@ while True:
     
     elif (opcao == 4):
         mostraDates()
+
+    elif (opcao == 5):
+        os.system('cls')
+        addTarefa()
+
+    elif (opcao == 6):
+        indice = pesquisaTarefas(tarefas)
+        if indice is not False:
+            print(tarefas[indice])
+
+    elif (opcao == 7):
+        mostraTarefas(tarefas)
+
+    else:
+        print('Opção inválida!')
 
     os.system('pause')
     

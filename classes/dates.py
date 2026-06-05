@@ -1,9 +1,10 @@
 class Dates:
-    def __init__(self, nome, cidade, estado, data):
+    def __init__(self, nome, cidade, estado, data, dono):
         self.nome = nome
         self.cidade = cidade
         self.estado = estado
         self.data = data
+        self.dono = dono
     
     def __str__(self):
         return f"{self.nome} - {self.cidade} - {self.estado} - {self.data}"
@@ -31,3 +32,9 @@ class Dates:
     
     def setData(self, data):
         self.data = data
+
+    def getDono(self):
+        return self.dono
+
+    def setDono(self, dono):
+        self.dono = dono

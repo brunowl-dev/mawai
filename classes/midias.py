@@ -1,9 +1,10 @@
-#1) registrar filmes, series, jogos ou álbuns de musica - bruno
 class Midia:
-    def __init__(self, nome, tipo, genero):
+    def __init__(self, nome, tipo, genero, dono):
         self.nome = nome
         self.tipo = tipo
         self.genero = genero
+        self.dono = dono
+        self.favorite = None
 
     def setNome(self, nome):
         self.nome = nome
@@ -23,21 +24,21 @@ class Midia:
     def getGenero(self):
         return self.genero
 
-    def setLuizasFavorite(self, LuizasFavorite):
-        self.LuizasFavorite = LuizasFavorite
+    def setFavorite(self, favorite):
+        self.favorite = favorite
 
-    def getLuizasFavorite(self):
-        return self.LuizasFavorite
-
-    def setBrunosFavorite(self, BrunosFavorite):
-        self.BrunosFavorite = BrunosFavorite
-
-    def getBrunosFavorite(self):
-        return self.BrunosFavorite
+    def getFavorite(self):
+        return self.favorite
+    
+    def setDono(self, dono):
+        self.dono = dono
+    
+    def getDono(self):
+        return self.dono
 
 class Albuns(Midia):
-    def __init__(self, nome, tipo, genero, artista):
-        super().__init__(nome, tipo, genero)
+    def __init__(self, nome, tipo, genero, artista, dono):
+        super().__init__(nome, tipo, genero, dono)
         self.artista = artista
     
     def setArtista(self, artista):
@@ -47,11 +48,11 @@ class Albuns(Midia):
         return self.artista
     
     def __str__(self):
-        return f'Nome: {self.nome} - Tipo: {self.tipo} - Gênero: {self.genero} - Artista: {self.artista}'
+        return f'Nome: {self.nome} - Tipo: {self.tipo} - Gênero: {self.genero} - Artista: {self.artista}.'
 
 class Jogos(Midia):
-    def __init__(self, nome, tipo, genero, plataforma):
-        super().__init__(nome, tipo, genero)
+    def __init__(self, nome, tipo, genero, plataforma, dono):
+        super().__init__(nome, tipo, genero, dono)
         self.plataforma = plataforma
     
     def getPlataforma(self):
@@ -64,7 +65,7 @@ class Jogos(Midia):
         return f'Nome: {self.nome} - Tipo: {self.tipo} - Gênero: {self.genero} - Plataforma: {self.plataforma}'
 
 class Series(Midia):
-    def __init__(self, nome, tipo, genero, episodios):
+    def __init__(self, nome, tipo, genero, episodios, dono):
         super().__init__(nome, tipo, genero)
         self.episodios = episodios
     
@@ -78,8 +79,8 @@ class Series(Midia):
         return f'Nome: {self.nome} - Tipo: {self.tipo} - Gênero: {self.genero} - Episódios: {self.episodios}'
 
 class Filmes(Midia):
-    def __init__(self, nome, tipo, genero, duracao):
-        super().__init__(nome, tipo, genero)
+    def __init__(self, nome, tipo, genero, duracao, dono):
+        super().__init__(nome, tipo, genero, dono)
         self.duracao = duracao #Em minutos
     
     def setDuracao(self, duracao):

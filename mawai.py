@@ -7,6 +7,16 @@ midias = list()
 dates = list()
 tarefas = list()
 
+def identificaDono():
+    dono = int(input('Quem é o dono da mídia?\n1 - Luiza\n2 - Bruno\n'))
+    if (dono == 1):
+        return 'Luiza'
+    elif (dono == 2):
+        return 'Bruno'
+    else:
+        print('Opção inválida!')
+        return Exception('Opção inválida!')
+
 def addFilmes():
     try:
         nome = input('Digite o nome do filme: ')
@@ -180,5 +190,7 @@ while True:
 
     os.system('pause')
     
+    tarefas[2].set
+
 print('Programa encerrado!')
 os.system('pause')

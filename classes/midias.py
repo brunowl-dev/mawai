@@ -66,7 +66,7 @@ class Jogos(Midia):
 
 class Series(Midia):
     def __init__(self, nome, tipo, genero, episodios, dono):
-        super().__init__(nome, tipo, genero)
+        super().__init__(nome, tipo, genero, dono)
         self.episodios = episodios
     
     def setEpisodios(self, episodios):
